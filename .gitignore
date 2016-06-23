@@ -1,0 +1,30 @@
+# build files
+build/
+bin
+run
+
+# Forge files
+CREDITS-fml.txt
+LICENSE-new.txt
+MinecraftForge-Credits.txt
+Paulscode IBXM Library License.txt
+Paulscode SoundSystem CodecIBXM License.txt
+README.txt
+forge-1.9.4-12.17.0.1980-1.10.0-changelog.txt
+minecraft
+
+# Eclipse files
+.classpath
+.project
+.settings
+eclipse/
+SummerCamp_Client.launch
+SummerCamp_Server.launch
+.metadata
+
+# gradle files
+.gradle
+
+# Vim files
+.vimrc
+eclimd.log
