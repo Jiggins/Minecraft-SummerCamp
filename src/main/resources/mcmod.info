@@ -1,0 +1,16 @@
+[
+  {
+    "modid": "summercamp",
+    "name": "Maynooth University Summer Camp Mod",
+    "description": "An example mod developed in Maynooth University Computer Science summer camp.",
+    "version": "1.0",
+    "mcversion": "${mcversion}",
+    "url": "https://www.maynoothuniversity.ie/computer-science/summer-camps",
+    "updateUrl": "",
+    "authorList": [""],
+    "credits": "Maynooth University",
+    "logoFile": "/assets/logo.png",
+    "screenshots": [],
+    "dependencies": []
+  }
+]
