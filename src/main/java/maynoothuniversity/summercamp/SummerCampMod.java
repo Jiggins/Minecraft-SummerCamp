@@ -8,6 +8,19 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
+/**
+ * This class is the main class for our mod.  The three @EventHandler methods below is similar to a main method.
+ * This is where all the methods and objects from all other classes will be called.
+ * This code will produce a lot of errors as its being typed because we use so many different classes.
+ * Usually the fix is simply pressing ctrl+shift+o to automatically import the required classes.
+ *
+ * Note: Don't worry about the imports in any of these classes
+ * eclipse will automatically import everything needed with the shortcut
+ * ctrl+shift+o (Mac: Command+shift+o)
+ * if it asks you what to import, always pick the one with either forge, fml or minecraft in its name.
+ *
+ * The `@Mod` annotation tells the game that this class is a mod and to add it to the game.
+ */
 @Mod(modid = SummerCampMod.MODID, version = SummerCampMod.VERSION)
 public class SummerCampMod {
 
@@ -22,12 +35,22 @@ public class SummerCampMod {
 		@Mod.Instance
 		public static SummerCampMod instance;
 
+		/**
+		 * Runs before the game loads.
+		 * Used to add Blocks, Items, Entities etc. to the game.
+		 * @EventHandler is important here, mod will not load without it
+		 */
 		@Mod.EventHandler
 		public void preInit(FMLPreInitializationEvent event) {
 				System.out.println("SummerCampMod preInit");
 				proxy.preInit(event);
 		}
 
+		/**
+		 * Runs as the game loads.
+		 * Used for adding names and recipes to the game
+		 * @EventHandler is important here, mod will not load without it
+		 */
 		@Mod.EventHandler
 		public void init(FMLInitializationEvent event) {
 				System.out.println("SummerCampMod init");
@@ -40,9 +63,17 @@ public class SummerCampMod {
 				proxy.postInit(event);
 		}
 
+		/**
+		 * The proxy classes control what is loaded on the client or server.
+		 * The `Common Proxy` loads objects that are used on both the client and server.
+		 * This is where we will load blocks and items
+		 */
 		public static class CommonProxy {
+				/**
+				 * Common pre-initialisation event.
+				 * Initialization of blocks and items typically goes here:
+				 */
 				public void preInit(FMLPreInitializationEvent event) {
-						// Initialization of blocks and items typically goes here:
 						blockexample = new BlockExample();
 				}
 
@@ -55,7 +86,11 @@ public class SummerCampMod {
 				}
 		}
 
-
+		/**
+		 * Client Proxy.
+		 * Loads objects only on the client side, this is useful for things that the
+		 * server doesn't need like textures, particles and sounds.
+		 */
 		public static class ClientProxy extends CommonProxy {
 				@Override
 				public void preInit(FMLPreInitializationEvent event) {
