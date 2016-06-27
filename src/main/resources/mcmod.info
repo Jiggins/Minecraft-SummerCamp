@@ -9,7 +9,7 @@
     "updateUrl": "",
     "authorList": [""],
     "credits": "Maynooth University",
-    "logoFile": "/assets/logo.png",
+    "logoFile": "assets/summercamp/logo.png",
     "screenshots": [],
     "dependencies": []
   }
